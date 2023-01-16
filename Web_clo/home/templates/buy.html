@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}information{% endblock %}
+
+{% block content %}
+     <div class="block-form">
+        <form method='POST' action="" class="form">
+            {% csrf_token %}
+            <div class="form-group">
+
+                <label for="bname" class="form__label">Name</label>
+                <input name='bname' type="text" class="form__input" placeholder='Enter your name'>
+                <label for="baddress" class="form__label">Address</label>
+                <input name='baddress' type="text" class="form__input" placeholder='Enter your address'>
+                <label for="bphone" class="form__label">Phone</label>
+                <input name='bphone' type="text" class="form__input" placeholder='Enter your phone'>
+                <label for="quantity" class="form__label">quantity</label>
+                <input name='quantity' type="number" class="form__input" placeholder='Enter your quantity'>
+
+                <input type="submit" class="form__button-submit" value='Purchase'>
+            </div>
+        </form>
+     </div>
+{% endblock %}

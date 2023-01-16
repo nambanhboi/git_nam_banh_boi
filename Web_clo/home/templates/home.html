@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}app home{% endblock %}
+
+{% block content %}
+    <div class='home-product'>
+        <!--grid -> row -> column -->                  
+        <div class='grid'>
+            <div class='grid__row'>
+                {% for p in products %}
+                <div class='grid__column-2-4'>
+                    <div class='home-product-item'>
+                        <div class='home-product-item__img' style="background-image:url('{{p.img.url}}')"></div>
+                        <div class='home-product-item__name'>{{p.name}}</div>
+                        <div class='home-product-item__infor'>{{p.infor}}</div>
+                        <div class='home-product-item__price'>
+                            <span class='home-product-item__price-old'>1.200.000đ</span>
+                            <span class='home-product-item__price-current'>{{p.price}}</span>
+                        </div>
+                        <div class='home-product-item__action'>
+                            <!-- home-product-item__like--liked -->
+                            <span class='home-product-item__like' >
+                                <i class='home-product-item__like-icon-empty far fa-heart'></i>
+                                <i class='home-product-item__like-icon-fill fas fa-heart'></i>
+                            </span>
+                            <div class='home-product-item__rating'>
+                                <i class='home-product-item__star--gold fas fa-star'></i>
+                                <i class='home-product-item__star--gold fas fa-star'></i>
+                                <i class='home-product-item__star--gold fas fa-star'></i>
+                                <i class='home-product-item__star--gold fas fa-star'></i>
+                                <i class=' fas fa-star'></i>
+                            </div>
+                            <span class='home-product-item__sold'>88 đã bán</span>
+                        </div>
+                        <div class='home-product-item__origin'>
+                            <span class='home-product-item__brand'>odin</span>
+                            <span class='home-product-item__origin-name'>Hà Nội</span>
+                        </div>
+                        <div class='home-product-item__favourite'>
+                            <i class='fas fa-check'></i>
+                            <span>Yêu thích</span>
+                        </div>
+                        <div class='home-product-item__sale-off'>
+                            <span class='home-product-item__sale-off-percent'>10%</span>
+                            <span class='home-product-item__sale-off-label'>GIẢM</span>
+                        </div> 
+                        <form class='home-product-item__form' action="{% url 'buy' p.id %}" method='GET'>
+                            <button type='submit' class='home-product-item__form-but'>Buy Product</button>
+                        </form>                        
+                    </div>
+                </div>
+                {% endfor %}
+                
+            </div>
+        </div>
+    </div>
+{% endblock %}
