@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    nam hip 
+    <div class="row">
+        <div class="col-sm-2 " style='text-align: right'>
+            {% if user.username %}
+                <span>He so lo he so li li {{user.username}}</span>
+                <span style='text-align: right'><a href="{% url 'logout' %}">Dang xuat</a></span>
+            {% else %}
+                <span>
+                    <a href="{% url 'register' %}">Dang ky</a>|
+                    <a href="{% url 'login' %}">Dang nhap</a>
+                </span>
+            {% endif %}
+        </div>
+        <div class="col-sm-10">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>
