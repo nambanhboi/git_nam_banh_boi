@@ -1,0 +1,41 @@
+html {
+    background-color: #d3d3d3;
+}
+
+.main {
+    background-color: #fff;
+    width: 50%;
+    margin-left: 25%;
+    padding: 20px 30px;
+    
+    font-size: 1.3rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+input {
+    line-height: 1.4rem;
+    height: 30px;
+}
+
+.form-submit {
+    width: 100%;
+    border-radius: 4px;
+    height: 30px;
+}
+
+
+.invalid span {
+    color: red;
+    font-size: 1rem;
+}
+
+.invalid input {
+    border: 2px solid red;
+    outline-color: red;
+    border-radius: 4px;
+}
